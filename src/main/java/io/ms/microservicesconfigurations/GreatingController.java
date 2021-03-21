@@ -1,5 +1,6 @@
 package io.ms.microservicesconfigurations;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,10 +20,14 @@ public class GreatingController {
 	@Value("${my.dbvalues.as.object}")
 	private String mydbValuesAsObject;
 	
+	@Autowired
+	private DbSettings dbSettings;
+	
 	@RequestMapping("/greating")
 	public String getGreating() {
 		return greatingMessage;
 	}
+	
 	
 	
 	@RequestMapping("/defalutValue")
@@ -40,5 +45,12 @@ public class GreatingController {
 	public String mydbValuesAsObject() {
 		System.out.println("mydbValuesAsObject: " + this.mydbValuesAsObject);
 		return mydbValuesAsObject;
+	}
+	
+	@RequestMapping("/mydbsettings")
+	public String mydbsettings() {
+		System.out.println("dbSettings: " + this.dbSettings.getConnection() + " : " + this.dbSettings.getHost());
+		return this.dbSettings.getConnection() + " : " + this.dbSettings.getHost();
+		
 	}
 }
