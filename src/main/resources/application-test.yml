@@ -4,7 +4,7 @@ app.name: myconfigproject
 greating.message: Hello from yml to ${app.name}
 my:
  list: abc, xyz, uvw
- dbvalues.as.object: "{connectionUrl: 'http://url', username:'foo', password:'pass'}"
+ dbvalues.as.object: "{connectionUrl: 'http://testconnectionurl', username:'foo', password:'pass'}"
 
 db:
  connection: http://url
@@ -12,8 +12,3 @@ db:
  port: 8525
 
 management.endpoints.web.exposure.include: "*"
-#http://localhost:8080/actuator/configprops
-
-spring:
-  profiles:
-    active: test
