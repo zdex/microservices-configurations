@@ -19,6 +19,8 @@ management.endpoints.web.exposure.include: "*"
 spring:
  config:
    import: optional:configserver:http://localhost:8888
+ application:
+   name: io.ms.config.client
 
 #cloud:config:uri: http://localhost:8888
 
