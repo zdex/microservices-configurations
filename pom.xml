@@ -10,7 +10,7 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.ms.config.client</groupId>
-	<artifactId>microservices-configurations</artifactId>
+	<artifactId>microservices-configurations-client</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>microservices-configurations</name>
 	<description>This project is to setup the microservices configurations</description>
